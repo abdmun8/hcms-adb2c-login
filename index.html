@@ -16,6 +16,8 @@
       href="https://abdmun8.github.io/hcms-adb2c-login/output.css"
       rel="stylesheet"
     />
+    <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
+
     <style>
       .bg-left {
         background-image: url(https://abdmun8.github.io/hcms-adb2c-login/mst-home-slider-8\ 1.png);
@@ -29,15 +31,13 @@
       .intro {
         display: none;
       }
-      #GoogleExchange {
+      .options > div > button {
         padding: 10px 20px;
-        border: 1px solid black;
+        border: 1px solid #d3e4f8;
         border-radius: 10px;
-      }
-      #MicrosoftAccountExchange {
-        padding: 10px 20px;
-        border: 1px solid black;
-        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 12px;
+        box-shadow: rgba(28, 94, 168, 0.2) 0px 4px 10px;
       }
     </style>
   </head>
@@ -57,12 +57,47 @@
       <div
         class="flex flex-col space-y-4 w-full md:w-1/2 flex items-center justify-center flex-row bg-white overflow-hidden"
       >
-        <div class="w-full mb-2 w-3/4 lg:w-8/12 space-y-1">
+        <div class="w-full mb-2 w-3/4 lg:w-8/12">
           <div class="text-2xl">
-            <span class="font-light">Welcome to</span>
+            <span class="font-light mb-2">Welcome to</span>
             <span class="font-bold">HCMS</span>
           </div>
-          <div class="font-thin text-base italic">SIgn In to continue</div>
+          <div class="font-thin text-base italic mb-6">SIgn In to continue</div>
+          <div id="api" data-name="Unified">
+            <div class="heading">
+              <h1 role="heading">Sign in</h1>
+            </div>
+            <div
+              class="claims-provider-list-buttons social"
+              aria-label="Sign in with your social account"
+              role="form"
+            >
+              <!-- <div class="intro">
+                <h2 aria-level="1">Sign in with your social account</h2>
+              </div>
+              <div class="options">
+                <div>
+                  <button
+                    class="accountButton firstButton claims-provider-selection"
+                    id="GoogleExchange"
+                    role="link"
+                    autofocus=""
+                  >
+                    Continue with Google
+                  </button>
+                </div>
+                <div>
+                  <button
+                    class="accountButton claims-provider-selection"
+                    id="MicrosoftAccountExchange"
+                    role="link"
+                  >
+                    Continue with Microsoft
+                  </button>
+                </div>
+              </div> -->
+            </div>
+          </div>
         </div>
         <!-- <button
           class="px-5 py-5 md:px-6 md:py-6 border border-[#D3E4F8] rounded-lg bg-white shadow-[0_5px_8px_rgb(28,94,168,0.2)] hover:shadow-[0_8px_10px_rgb(28,94,168,0.2)] flex justify-center w-3/4 lg:w-8/12 text-center relative cursor-pointer accountButton firstButton claims-provider-selection"
@@ -108,7 +143,6 @@
 
           Continue with Microsoft
         </button> -->
-        <div id="api"></div>
       </div>
     </div>
   </body>
