@@ -39,7 +39,7 @@
       }
 
       .options > div > button {
-        padding: 10px 20px;
+        padding: 12px 20px;
         border: 1px solid #d3e4f8;
         border-radius: 10px;
         width: 100%;
@@ -72,6 +72,28 @@
 
       .options > div:nth-child(3) > button::before {
         background-image: url("https://abdmun8.github.io/hcms-adb2c-login/microsoft-window-logo-emblem-0 2.png");
+      }
+
+      @media (min-width: 768px) {
+        .options > div > button {
+          padding: 16px 20px;
+          border: 1px solid #d3e4f8;
+          border-radius: 10px;
+          width: 100%;
+          margin-bottom: 14px;
+          box-shadow: rgba(28, 94, 168, 0.2) 0px 4px 10px;
+        }
+
+        .options > div > button::before {
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          left: 10%;
+          top: 21%;
+          content: "";
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
       }
     </style>
   </head>
