@@ -17,6 +17,7 @@
       href="https://abdmun8.github.io/hcms-adb2c-login/output.css"
       rel="stylesheet"
     />
+
     <style>
       .bg-left {
         background-image: url(https://abdmun8.github.io/hcms-adb2c-login/mst-home-slider-8\ 1.png);
@@ -39,7 +40,7 @@
       }
 
       .options > div > button {
-        padding: 12px 20px;
+        padding: 10px 20px;
         border: 1px solid #d3e4f8;
         border-radius: 10px;
         width: 100%;
@@ -53,8 +54,8 @@
 
       .options > div > button::before {
         position: absolute;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         left: 6%;
         top: 20%;
         content: "";
@@ -63,11 +64,11 @@
       }
 
       .options > div:nth-child(1) > button::before {
-        background-image: url("https://abdmun8.github.io/hcms-adb2c-login/Microsoft_Office_logo_(2019–present) 2.png");
+        background-image: url("https://abdmun8.github.io/hcms-adb2c-login/Google__G__Logo 2.png");
       }
 
       .options > div:nth-child(2) > button::before {
-        background-image: url("https://abdmun8.github.io/hcms-adb2c-login/Google__G__Logo 2.png");
+        background-image: url("https://abdmun8.github.io/hcms-adb2c-login/Microsoft_Office_logo_(2019–present) 2.png");
       }
 
       .options > div:nth-child(3) > button::before {
@@ -94,17 +95,66 @@
           background-repeat: no-repeat;
           background-size: cover;
         }
+
+        .lower-pattern {
+          display: none;
+        }
+
+        .upper-pattern {
+          display: none;
+        }
+
+        .hcms-mobile-logo {
+          display: none;
+        }
       }
 
       @media (max-width: 767px) {
         .options > div > button {
           font-size: 13px;
+          border-radius: 25px;
+        }
+
+        .lower-pattern {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-image: url("https://abdmun8.github.io/hcms-adb2c-login/HCMS2\ Pattern-04\ 2.png");
+          height: 200px;
+          width: 200px;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        .upper-pattern {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-image: url("https://abdmun8.github.io/hcms-adb2c-login/HCMS2\ Pattern-04\ 1.png");
+          height: 200px;
+          width: 300px;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        .hcms-mobile-logo {
+          position: absolute;
+          bottom: 20px;
+          right: 40%;
+          background-image: url("https://abdmun8.github.io/hcms-adb2c-login/MST\ Logo\ -\ Grey\ 1.png");
+          height: 50px;
+          width: 80px;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
       }
     </style>
   </head>
   <body class="h-screen" style="height: 100%">
-    <div class="flex flex-row h-screen">
+    <div class="flex flex-row h-screen relative">
+      <div class="upper-pattern"></div>
+      <div class="lower-pattern"></div>
+      <div class="hcms-mobile-logo"></div>
       <div class="hidden md:block w-1/2 h-screen relative">
         <div class="absolute left-6 top-6 z-10">
           <img
@@ -120,12 +170,48 @@
         class="flex flex-col space-y-4 w-full md:w-1/2 flex items-center justify-center flex-row bg-white overflow-hidden"
       >
         <div class="w-full mb-2 w-3/4 lg:w-8/12">
-          <div class="text-2xl">
-            <span class="font-light mb-2">Welcome to</span>
-            <span class="font-bold">HCMS</span>
+          <div class="text-2xl web-heading flex flex-col md:flex-row">
+            <div class="font-light md:mb-2">Welcome to</div>
+            <div class="font-bold md:ml-2">HCMS</div>
           </div>
-          <div class="font-thin text-base italic mb-6">Sign in to continue</div>
-          <div id="api" data-name="Unified"></div>
+          <div class="font-thin text-base italic mb-6 web-heading">
+            Sign in to continue
+          </div>
+          <div id="api" data-name="Unified">
+            <div class="heading">
+              <h1 role="heading">Sign in</h1>
+            </div>
+            <div
+              class="claims-provider-list-buttons social"
+              aria-label="Sign in with your social account"
+              role="form"
+            >
+              <div class="intro">
+                <h2 aria-level="1">Sign in with your social account</h2>
+              </div>
+              <div class="options">
+                <div>
+                  <button
+                    class="accountButton firstButton claims-provider-selection"
+                    id="GoogleExchange"
+                    role="link"
+                    autofocus=""
+                  >
+                    Continue with Google
+                  </button>
+                </div>
+                <div>
+                  <button
+                    class="accountButton claims-provider-selection"
+                    id="MicrosoftAccountExchange"
+                    role="link"
+                  >
+                    Continue with Microsoft
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
