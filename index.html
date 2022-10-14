@@ -153,10 +153,54 @@
           background-repeat: no-repeat;
         }
       }
+
+      .loader-wrapper {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(28, 94, 168, 0.2);
+        z-index: 100;
+      }
+
+      .loader-wrapper.loaded {
+        visibility: hidden;
+      }
+
+      .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid rgba(28, 94, 168, 1);
+        border-color: rgba(28, 94, 168, 1) transparent rgba(28, 94, 168, 1)
+          transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body class="h-screen" style="height: 100%">
     <div class="flex flex-row h-screen relative">
+      <div class="loader-wrapper">
+        <div class="lds-dual-ring"></div>
+      </div>
       <div class="upper-pattern"></div>
       <div class="lower-pattern"></div>
       <div class="hcms-mobile-logo"></div>
@@ -186,5 +230,10 @@
         </div>
       </div>
     </div>
+    <script>
+      window.addEventListener("load", function () {
+        document.querySelector(".loader-wrapper").classList.add("loaded");
+      });
+    </script>
   </body>
 </html>
